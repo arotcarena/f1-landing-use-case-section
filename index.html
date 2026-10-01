@@ -1,7 +1,7 @@
 <!-- DEV LOCAL UNIQUEMENT : à supprimer avant la mise en prod (Poppins est déjà chargée par la page WordPress) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- FIN DEV LOCAL -->
 <style>
   .f1-support-section {
@@ -11,11 +11,14 @@
     --f1-support-primary-border: #d9f99d;
     --f1-support-secondary-light: #f4f6f7;
     --f1-support-heading: #455560;
+    --f1-support-foreground: #1f2a30;
     --f1-support-border: #e7e7e7;
-    --f1-support-case-one: #2563eb;
-    --f1-support-case-two: #e11d48;
-    --f1-support-case-one: #1e40af;
-    --f1-support-case-two: #be185d;
+    --f1-support-case-one: #eff6ff;
+    --f1-support-case-one-dark: #1d4ed8;
+    --f1-support-case-two: #fdf2f8;
+    --f1-support-case-two-dark: #be185d;
+    --f1-support-bubble-support-bg: rgb(84, 165, 26);
+
     --f1-support-pending-50: #fefce8;
     --f1-support-pending-200: #fef08a;
     --f1-support-pending-500: #eab308;
@@ -72,9 +75,11 @@
   }
   .f1-support-card--one {
     --f1-support-case: var(--f1-support-case-one);
+    --f1-support-case-dark: var(--f1-support-case-one-dark);
   }
   .f1-support-card--two {
     --f1-support-case: var(--f1-support-case-two);
+    --f1-support-case-dark: var(--f1-support-case-two-dark);
   }
   .f1-support-case-head {
     display: flex;
@@ -89,7 +94,7 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--f1-support-case) center / 20px 20px no-repeat;
+    background: var(--f1-support-case-dark) center / 20px 20px no-repeat;
   }
   .f1-support-card--one .f1-support-case-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z'/%3E%3C/svg%3E");
@@ -135,7 +140,7 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--f1-support-secondary-light) center / 20px 20px no-repeat;
+    background: var(--f1-support-case) center / 20px 20px no-repeat;
   }
   .f1-support-msg .f1-support-bubble {
     grid-row: 2;
@@ -146,7 +151,7 @@
   }
   .f1-support-msg--client::before {
     grid-column: 1;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667077' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f2a30' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
   }
   .f1-support-msg--client .f1-support-bubble,
   .f1-support-msg--client .f1-support-label {
@@ -159,7 +164,7 @@
   }
   .f1-support-msg--support::before {
     grid-column: 2;
-    background-color: var(--f1-support-case);
+    background-color: var(--f1-support-bubble-support-bg);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z'/%3E%3Cpath d='M21 16v2a4 4 0 0 1-4 4h-5'/%3E%3C/svg%3E");
   }
   .f1-support-msg--support .f1-support-bubble,
@@ -172,20 +177,19 @@
     grid-row: 1;
     display: block;
     margin: 0 0 4px;
-    padding: 9px 14px;
-    border-radius: 12px;
+    padding: 4px 12px;
+    border-radius: 1000px;
     font-size: 11px;
     font-weight: 700;
     line-height: 1.5;
     letter-spacing: 0.06em;
-    text-transform: uppercase;
   }
   .f1-support-msg--client .f1-support-label {
-    background: var(--f1-support-secondary-light);
+    background: var(--f1-support-case);
     color: var(--f1-support-secondary);
   }
   .f1-support-msg--support .f1-support-label {
-    background: var(--f1-support-case);
+    background: var(--f1-support-bubble-support-bg);
     color: #ffffff;
   }
   .f1-support-msg--resolved .f1-support-label::before {
@@ -208,14 +212,14 @@
     border: 1px solid transparent;
   }
   .f1-support-msg--client .f1-support-bubble {
-    background: var(--f1-support-secondary-light);
-    border-color: var(--f1-support-secondary-light);
-    border-bottom-left-radius: 4px;
-    color: var(--f1-support-secondary);
-  }
-  .f1-support-msg--support .f1-support-bubble {
     background: var(--f1-support-case);
     border-color: var(--f1-support-case);
+    border-bottom-left-radius: 4px;
+    color: var(--f1-support-foreground);
+  }
+  .f1-support-msg--support .f1-support-bubble {
+    background: var(--f1-support-bubble-support-bg);
+    border-color: var(--f1-support-bubble-support-bg);
     border-bottom-right-radius: 4px;
     color: #ffffff;
   }
@@ -283,6 +287,7 @@
     padding: 0 0 0 24px;
     list-style: none;
     font-size: 14.5px;
+    font-weight: 600;
     line-height: 1.45;
     color: var(--f1-support-secondary);
   }
@@ -351,17 +356,17 @@
             <p class="f1-support-bubble">Bonjour, je ne retrouve plus un dossier important.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
-            <span class="f1-support-label">Support</span>
-            <p class="f1-support-bubble">D'accord, pouvez-vous me donner le nom du dossier ?</p>
+            <span class="f1-support-label">F1 Support</span>
+            <p class="f1-support-bubble">D&apos;accord, pouvez-vous me donner le nom du dossier ?</p>
           </li>
           <li class="f1-support-msg f1-support-msg--client">
-            <p class="f1-support-bubble">Oui, il s'appelle &quot;Dossiers clients 2026&quot;</p>
+            <p class="f1-support-bubble">Oui, il s&apos;appelle &quot;Dossiers clients 2026&quot;</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
-            <p class="f1-support-bubble">Vous savez où il était enregistré à l'origine ? Et depuis quand avez-vous remarqué sa disparition ?</p>
+            <p class="f1-support-bubble">Vous savez où il était enregistré à l&apos;origine ? Et depuis quand avez-vous remarqué sa disparition ?</p>
           </li>
           <li class="f1-support-msg f1-support-msg--client">
-            <p class="f1-support-bubble">Il était sur le serveur partagé, et je m'en suis aperçu ce matin.</p>
+            <p class="f1-support-bubble">Il était sur le serveur partagé, et je m&apos;en suis aperçu ce matin.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
             <p class="f1-support-bubble">Très bien, on vérifie les sauvegardes et on revient vers vous rapidement.</p>
@@ -369,8 +374,8 @@
           <li class="f1-support-actions">
             <h4 class="f1-support-actions-title">Actions menées</h4>
             <ul class="f1-support-actions-list">
-              <li class="f1-support-action">Vérification de l’emplacement initial sur le serveur</li>
-              <li class="f1-support-action">Contrôle de l’état des sauvegardes</li>
+              <li class="f1-support-action">Vérification de l&apos;emplacement initial sur le serveur</li>
+              <li class="f1-support-action">Contrôle de l&apos;état des sauvegardes</li>
               <li class="f1-support-action">Recherche de la dernière version sauvegardée et restauration du dossier</li>
             </ul>
           </li>
@@ -378,8 +383,8 @@
             <span class="f1-support-delay-badge">20 minutes plus tard</span>
           </li>
           <li class="f1-support-msg f1-support-msg--support f1-support-msg--resolved">
-            <span class="f1-support-label">Support</span>
-            <p class="f1-support-bubble">C'est réglé. Le dossier a été restauré. Pouvez-vous vérifier que vous y accédez correctement ?</p>
+            <span class="f1-support-label">F1 Support</span>
+            <p class="f1-support-bubble">C&apos;est réglé. Le dossier a été restauré. Pouvez-vous vérifier que vous y accédez correctement ?</p>
           </li>
         </ol>
       </article>
@@ -391,17 +396,17 @@
         <ol class="f1-support-chat">
           <li class="f1-support-msg f1-support-msg--client">
             <span class="f1-support-label">Client</span>
-            <p class="f1-support-bubble">Bonjour, j’ai reçu un mail avec un lien qui me paraît suspect. Je l’ai ouvert et la page me demande des informations personnelles.</p>
+            <p class="f1-support-bubble">Bonjour, j&apos;ai reçu un mail avec un lien qui me paraît suspect. Je l&apos;ai ouvert et la page me demande des informations personnelles.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
-            <span class="f1-support-label">Support</span>
+            <span class="f1-support-label">F1 Support</span>
             <p class="f1-support-bubble">Vous avez renseigné des informations sur la page ?</p>
           </li>
           <li class="f1-support-msg f1-support-msg--client">
-            <p class="f1-support-bubble">Non, j’ai eu un doute et je vous ai appelés.</p>
+            <p class="f1-support-bubble">Non, j&apos;ai eu un doute et je vous ai appelés.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
-            <p class="f1-support-bubble">Vous avez bien fait. Ne cliquez plus sur le message, on va l'analyser et vérifier immédiatement s'il est malveillant.</p>
+            <p class="f1-support-bubble">Vous avez bien fait. Ne cliquez plus sur le message, on va l&apos;analyser et vérifier immédiatement s&apos;il est malveillant.</p>
           </li>
           <li class="f1-support-delay">
             <span class="f1-support-delay-badge">Quelques instants plus tard</span>
@@ -410,21 +415,21 @@
             <p class="f1-support-bubble">Le lien est bien malveillant. Avec votre accord, on peut sécuriser votre messagerie pour éviter que ce type de message arrive dans les boîtes mail.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--client">
-            <p class="f1-support-bubble">C'est d'accord, allez-y.</p>
+            <p class="f1-support-bubble">C&apos;est d&apos;accord, allez-y.</p>
           </li>
           <li class="f1-support-actions">
             <h4 class="f1-support-actions-title">Actions menées</h4>
             <ul class="f1-support-actions-list">
               <li class="f1-support-action">Mise en place de Microsoft Defender pour la messagerie</li>
-              <li class="f1-support-action">Configuration des stratégies d’alerte et de détection des menaces</li>
-              <li class="f1-support-action">Activation d’une quarantaine pour les messages suspects</li>
+              <li class="f1-support-action">Configuration des stratégies d&apos;alerte et de détection des menaces</li>
+              <li class="f1-support-action">Activation d&apos;une quarantaine pour les messages suspects</li>
             </ul>
           </li>
           <li class="f1-support-delay">
             <span class="f1-support-delay-badge">1 heure plus tard</span>
           </li>
           <li class="f1-support-msg f1-support-msg--support f1-support-msg--resolved">
-            <span class="f1-support-label">Support</span>
+            <span class="f1-support-label">F1 Support</span>
             <p class="f1-support-bubble">La protection est en place. Les futurs messages identifiés comme suspects seront automatiquement placés en quarantaine.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
