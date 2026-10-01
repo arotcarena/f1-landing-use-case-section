@@ -1,3 +1,8 @@
+<!-- DEV LOCAL UNIQUEMENT : à supprimer avant la mise en prod (Poppins est déjà chargée par la page WordPress) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<!-- FIN DEV LOCAL -->
 <style>
   .f1-support-section {
     --f1-support-primary: #6cb636;
@@ -7,10 +12,15 @@
     --f1-support-secondary-light: #f4f6f7;
     --f1-support-heading: #455560;
     --f1-support-border: #e7e7e7;
+    --f1-support-case-one: #2563eb;
+    --f1-support-case-two: #e11d48;
     --f1-support-case-one: #1e40af;
     --f1-support-case-two: #be185d;
-    --f1-support-font-heading: 'Poppins', sans-serif;
-    --f1-support-font-text: 'Open Sans', sans-serif;
+    --f1-support-pending-50: #fefce8;
+    --f1-support-pending-200: #fef08a;
+    --f1-support-pending-500: #eab308;
+    --f1-support-font-heading: "Poppins", Noto Sans, sans-serif;
+    --f1-support-font-text: "Poppins", Noto Sans, sans-serif;
     background: #ffffff;
     color: var(--f1-support-secondary);
     font-family: var(--f1-support-font-text);
@@ -74,17 +84,18 @@
     padding-bottom: 14px;
     border-bottom: 1px solid var(--f1-support-border);
   }
-  .f1-support-case-num {
+  .f1-support-case-icon {
     flex: 0 0 auto;
-    display: inline-block;
-    padding: 3px 9px;
-    border-radius: 6px;
-    background: var(--f1-support-case);
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--f1-support-case) center / 20px 20px no-repeat;
+  }
+  .f1-support-card--one .f1-support-case-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z'/%3E%3C/svg%3E");
+  }
+  .f1-support-card--two .f1-support-case-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='16' x='2' y='4' rx='2'/%3E%3Cpath d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/%3E%3C/svg%3E");
   }
   .f1-support-case-title {
     margin: 0;
@@ -112,29 +123,81 @@
   }
   .f1-support-msg {
     padding: 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto;
+    column-gap: 8px;
+    align-items: end;
     max-width: 82%;
+  }
+  .f1-support-msg::before {
+    content: "";
+    grid-row: 2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--f1-support-secondary-light) center / 20px 20px no-repeat;
+  }
+  .f1-support-msg .f1-support-bubble {
+    grid-row: 2;
   }
   .f1-support-msg--client {
     align-self: flex-start;
-    align-items: flex-start;
+    grid-template-columns: 36px auto;
+  }
+  .f1-support-msg--client::before {
+    grid-column: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667077' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+  }
+  .f1-support-msg--client .f1-support-bubble,
+  .f1-support-msg--client .f1-support-label {
+    grid-column: 2;
+    justify-self: start;
   }
   .f1-support-msg--support {
     align-self: flex-end;
-    align-items: flex-end;
+    grid-template-columns: auto 36px;
+  }
+  .f1-support-msg--support::before {
+    grid-column: 2;
+    background-color: var(--f1-support-case);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z'/%3E%3Cpath d='M21 16v2a4 4 0 0 1-4 4h-5'/%3E%3C/svg%3E");
+  }
+  .f1-support-msg--support .f1-support-bubble,
+  .f1-support-msg--support .f1-support-label {
+    grid-column: 1;
+    justify-self: end;
   }
   .f1-support-label {
+    position: relative;
+    grid-row: 1;
     display: block;
-    margin: 0 4px 3px;
+    margin: 0 0 4px;
+    padding: 9px 14px;
+    border-radius: 12px;
     font-size: 11px;
     font-weight: 700;
+    line-height: 1.5;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+  }
+  .f1-support-msg--client .f1-support-label {
+    background: var(--f1-support-secondary-light);
     color: var(--f1-support-secondary);
   }
   .f1-support-msg--support .f1-support-label {
-    color: var(--f1-support-secondary);
+    background: var(--f1-support-case);
+    color: #ffffff;
+  }
+  .f1-support-msg--resolved .f1-support-label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    transform: translateY(-50%);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236cb636' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
   }
   .f1-support-bubble {
     margin: 0;
@@ -175,9 +238,9 @@
     gap: 6px;
     padding: 4px 12px;
     border-radius: 999px;
-    background: var(--f1-support-primary-light);
-    border: 1px solid var(--f1-support-primary-border);
-    color: var(--f1-support-secondary);
+    background: var(--f1-support-pending-50);
+    border: 1px solid var(--f1-support-pending-200);
+    color: var(--f1-support-pending-500);
     font-size: 13px;
     font-weight: 700;
     white-space: nowrap;
@@ -187,20 +250,20 @@
     flex: 0 0 auto;
     width: 14px;
     height: 14px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%236cb636' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6.3'/%3E%3Cpath d='M8 4.6V8l2.3 1.5'/%3E%3C/svg%3E") center / contain no-repeat;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23eab308' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6.3'/%3E%3Cpath d='M8 4.6V8l2.3 1.5'/%3E%3C/svg%3E") center / contain no-repeat;
   }
   .f1-support-actions {
     margin: 6px 0 !important;
     padding: 12px 16px;
-    background: var(--f1-support-primary-light);
-    border: 1px solid var(--f1-support-primary-border);
-    border-left: 3px solid var(--f1-support-primary);
+    background: var(--f1-support-pending-50);
+    border: 1px solid var(--f1-support-pending-200);
+    border-left: 3px solid var(--f1-support-pending-500);
     border-radius: 8px;
   }
   .f1-support-actions-title {
     margin: 0 0 6px;
     padding: 0;
-    color: var(--f1-support-heading);
+    color: var(--f1-support-pending-500);
     font-size: 13px;
     font-weight: 700;
     line-height: 1.4;
@@ -234,7 +297,7 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: var(--f1-support-primary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-4.9'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
+    background: var(--f1-support-pending-500) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-4.9'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
   }
   @media (max-width: 1024px) {
     .f1-support-grid {
@@ -279,7 +342,7 @@
     <div class="f1-support-grid">
       <article class="f1-support-card f1-support-card--one" aria-labelledby="f1-support-case1-title">
         <div class="f1-support-case-head">
-          <span class="f1-support-case-num">Cas 1</span>
+          <span class="f1-support-case-icon" aria-hidden="true"></span>
           <h3 id="f1-support-case1-title" class="f1-support-case-title">Un dossier important a disparu</h3>
         </div>
         <ol class="f1-support-chat">
@@ -292,19 +355,15 @@
             <p class="f1-support-bubble">D'accord, pouvez-vous me donner le nom du dossier ?</p>
           </li>
           <li class="f1-support-msg f1-support-msg--client">
-            <span class="f1-support-label">Client</span>
             <p class="f1-support-bubble">Oui, il s'appelle &quot;Dossiers clients 2026&quot;</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
-            <span class="f1-support-label">Support</span>
             <p class="f1-support-bubble">Vous savez où il était enregistré à l'origine ? Et depuis quand avez-vous remarqué sa disparition ?</p>
           </li>
           <li class="f1-support-msg f1-support-msg--client">
-            <span class="f1-support-label">Client</span>
             <p class="f1-support-bubble">Il était sur le serveur partagé, et je m'en suis aperçu ce matin.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
-            <span class="f1-support-label">Support</span>
             <p class="f1-support-bubble">Très bien, on vérifie les sauvegardes et on revient vers vous rapidement.</p>
           </li>
           <li class="f1-support-actions">
@@ -318,7 +377,7 @@
           <li class="f1-support-delay">
             <span class="f1-support-delay-badge">20 minutes plus tard</span>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
+          <li class="f1-support-msg f1-support-msg--support f1-support-msg--resolved">
             <span class="f1-support-label">Support</span>
             <p class="f1-support-bubble">C'est réglé. Le dossier a été restauré. Pouvez-vous vérifier que vous y accédez correctement ?</p>
           </li>
@@ -326,7 +385,7 @@
       </article>
       <article class="f1-support-card f1-support-card--two" aria-labelledby="f1-support-case2-title">
         <div class="f1-support-case-head">
-          <span class="f1-support-case-num">Cas 2</span>
+          <span class="f1-support-case-icon" aria-hidden="true"></span>
           <h3 id="f1-support-case2-title" class="f1-support-case-title">Un collaborateur reçoit un mail suspect</h3>
         </div>
         <ol class="f1-support-chat">
@@ -339,22 +398,18 @@
             <p class="f1-support-bubble">Vous avez renseigné des informations sur la page ?</p>
           </li>
           <li class="f1-support-msg f1-support-msg--client">
-            <span class="f1-support-label">Client</span>
             <p class="f1-support-bubble">Non, j’ai eu un doute et je vous ai appelés.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
-            <span class="f1-support-label">Support</span>
             <p class="f1-support-bubble">Vous avez bien fait. Ne cliquez plus sur le message, on va l'analyser et vérifier immédiatement s'il est malveillant.</p>
           </li>
           <li class="f1-support-delay">
             <span class="f1-support-delay-badge">Quelques instants plus tard</span>
           </li>
           <li class="f1-support-msg f1-support-msg--support">
-            <span class="f1-support-label">Support</span>
             <p class="f1-support-bubble">Le lien est bien malveillant. Avec votre accord, on peut sécuriser votre messagerie pour éviter que ce type de message arrive dans les boîtes mail.</p>
           </li>
           <li class="f1-support-msg f1-support-msg--client">
-            <span class="f1-support-label">Client</span>
             <p class="f1-support-bubble">C'est d'accord, allez-y.</p>
           </li>
           <li class="f1-support-actions">
@@ -368,9 +423,12 @@
           <li class="f1-support-delay">
             <span class="f1-support-delay-badge">1 heure plus tard</span>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
+          <li class="f1-support-msg f1-support-msg--support f1-support-msg--resolved">
             <span class="f1-support-label">Support</span>
-            <p class="f1-support-bubble">La protection est en place. Les futurs messages identifiés comme suspects seront automatiquement placés en quarantaine. Maintenant je vais vous montrer comment consulter et gérer les messages en quarantaine. Un guide restera également à votre disposition si nécessaire.</p>
+            <p class="f1-support-bubble">La protection est en place. Les futurs messages identifiés comme suspects seront automatiquement placés en quarantaine.</p>
+          </li>
+          <li class="f1-support-msg f1-support-msg--support">
+            <p class="f1-support-bubble">Maintenant je vais vous montrer comment consulter et gérer les messages en quarantaine. Un guide restera également à votre disposition si nécessaire.</p>
           </li>
         </ol>
       </article>
