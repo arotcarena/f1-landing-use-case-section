@@ -17,7 +17,7 @@
     --landing-infogerance-use-cases-case-one-dark: #1d4ed8;
     --landing-infogerance-use-cases-case-two: #fdf2f8;
     --landing-infogerance-use-cases-case-two-dark: #be185d;
-    --landing-infogerance-use-cases-bubble-support-bg: #51991e;
+    --landing-infogerance-use-cases-bubble-support-bg: #6cb636;
 
     --landing-infogerance-use-cases-pending-50: #fefce8;
     --landing-infogerance-use-cases-pending-200: #fef08a;
@@ -121,7 +121,7 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
   }
   .landing-infogerance-use-cases-chat > li {
     margin: 0;
@@ -400,9 +400,6 @@
     }
   }
   @media (max-width: 860px) {
-    .landing-infogerance-use-cases-section {
-      padding: 36px 16px;
-    }
     .landing-infogerance-use-cases-grid {
       grid-template-columns: minmax(0, 1fr);
     }
@@ -420,6 +417,10 @@
     .landing-infogerance-use-cases-bubble {
       font-size: 14.5px;
     }
+  }
+  p.landing-infogerance-use-cases-bubble {
+    margin-bottom: 0!important;
+    font-weight: 500!important;
   }
 </style>
 <div class="landing-infogerance-use-cases-section" aria-labelledby="landing-infogerance-use-cases-title">
