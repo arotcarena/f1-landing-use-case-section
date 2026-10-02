@@ -426,7 +426,7 @@
 <div class="landing-infogerance-use-cases-section" aria-labelledby="landing-infogerance-use-cases-title">
   <div class="landing-infogerance-use-cases-inner">
     <div class="landing-infogerance-use-cases-grid">
-      <article class="landing-infogerance-use-cases-card landing-infogerance-use-cases-card--one" aria-labelledby="landing-infogerance-use-cases-case1-title">
+      <article class="landing-infogerance-use-cases-card landing-infogerance-use-cases-card--one" data-use-case="dossier-disparu" aria-labelledby="landing-infogerance-use-cases-case1-title">
         <div class="landing-infogerance-use-cases-case-head">
           <span class="landing-infogerance-use-cases-case-icon" aria-hidden="true"></span>
           <h3 id="landing-infogerance-use-cases-case1-title" class="landing-infogerance-use-cases-case-title">Un dossier important a disparu</h3>
@@ -468,7 +468,7 @@
           </li>
         </ol>
       </article>
-      <article class="landing-infogerance-use-cases-card landing-infogerance-use-cases-card--two" aria-labelledby="landing-infogerance-use-cases-case2-title">
+      <article class="landing-infogerance-use-cases-card landing-infogerance-use-cases-card--two" data-use-case="mail-suspect" aria-labelledby="landing-infogerance-use-cases-case2-title">
         <div class="landing-infogerance-use-cases-case-head">
           <span class="landing-infogerance-use-cases-case-icon" aria-hidden="true"></span>
           <h3 id="landing-infogerance-use-cases-case2-title" class="landing-infogerance-use-cases-case-title">Un collaborateur reçoit un mail suspect</h3>
@@ -591,6 +591,15 @@
         var collapsed = !chat.classList.contains("is-collapsed");
         button.textContent = collapsed ? "Voir la suite" : "Voir moins";
         button.setAttribute("aria-expanded", collapsed ? "false" : "true");
+
+        if (!collapsed) {
+          var useCaseCard = chat.closest("[data-use-case]");
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "use_case_expand",
+            use_case: useCaseCard ? useCaseCard.getAttribute("data-use-case") : chat.id
+          });
+        }
 
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
           chat.classList.toggle("is-collapsed", collapsed);
