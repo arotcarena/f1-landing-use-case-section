@@ -4,129 +4,132 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <!-- FIN DEV LOCAL -->
 <style>
-  .f1-support-section {
-    --f1-support-primary: #6cb636;
-    --f1-support-secondary: #667077;
-    --f1-support-primary-light: #fbfff3;
-    --f1-support-primary-border: #d9f99d;
-    --f1-support-secondary-light: #f4f6f7;
-    --f1-support-heading: #455560;
-    --f1-support-foreground: #1f2a30;
-    --f1-support-border: #e7e7e7;
-    --f1-support-case-one: #eff6ff;
-    --f1-support-case-one-dark: #1d4ed8;
-    --f1-support-case-two: #fdf2f8;
-    --f1-support-case-two-dark: #be185d;
-    --f1-support-bubble-support-bg: rgb(84, 165, 26);
+  .landing-infogerance-use-cases-section {
+    --landing-infogerance-use-cases-primary: #6cb636;
+    --landing-infogerance-use-cases-secondary: #667077;
+    --landing-infogerance-use-cases-primary-light: #fbfff3;
+    --landing-infogerance-use-cases-primary-border: #d9f99d;
+    --landing-infogerance-use-cases-secondary-light: #f4f6f7;
+    --landing-infogerance-use-cases-heading: #455560;
+    --landing-infogerance-use-cases-foreground: #1f2a30;
+    --landing-infogerance-use-cases-border: #e7e7e7;
+    --landing-infogerance-use-cases-case-one: #eff6ff;
+    --landing-infogerance-use-cases-case-one-dark: #1d4ed8;
+    --landing-infogerance-use-cases-case-two: #fdf2f8;
+    --landing-infogerance-use-cases-case-two-dark: #be185d;
+    --landing-infogerance-use-cases-bubble-support-bg: #51991e;
 
-    --f1-support-pending-50: #fefce8;
-    --f1-support-pending-200: #fef08a;
-    --f1-support-pending-500: #eab308;
-    --f1-support-font-heading: "Poppins", Noto Sans, sans-serif;
-    --f1-support-font-text: "Poppins", Noto Sans, sans-serif;
+    --landing-infogerance-use-cases-pending-50: #fefce8;
+    --landing-infogerance-use-cases-pending-200: #fef08a;
+    --landing-infogerance-use-cases-pending-500: #eab308;
+    --landing-infogerance-use-cases-font-heading: "Poppins", Noto Sans, sans-serif;
+    --landing-infogerance-use-cases-font-text: "Poppins", Noto Sans, sans-serif;
     background: #ffffff;
-    color: var(--f1-support-secondary);
-    font-family: var(--f1-support-font-text);
+    color: var(--landing-infogerance-use-cases-secondary);
+    font-family: var(--landing-infogerance-use-cases-font-text);
     line-height: 1.5;
-    padding: 48px 20px;
     box-sizing: border-box;
   }
-  .f1-support-section *,
-  .f1-support-section *::before,
-  .f1-support-section *::after {
+  .landing-infogerance-use-cases-section *,
+  .landing-infogerance-use-cases-section *::before,
+  .landing-infogerance-use-cases-section *::after {
     box-sizing: border-box;
   }
-  .f1-support-inner {
-    max-width: 1320px;
+  .landing-infogerance-use-cases-inner {
+    max-width: 1520px;
     margin: 0 auto;
   }
-  .f1-support-header {
+  .landing-infogerance-use-cases-header {
     text-align: center;
     max-width: 760px;
     margin: 0 auto 28px;
   }
-  .f1-support-title {
+  .landing-infogerance-use-cases-title {
     margin: 0 0 8px;
     padding: 0;
-    color: var(--f1-support-heading);
+    color: var(--landing-infogerance-use-cases-heading);
     font-size: clamp(24px, 2.4vw, 32px);
     font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.01em;
-    font-family: var(--f1-support-font-heading);
+    font-family: var(--landing-infogerance-use-cases-font-heading);
   }
-  .f1-support-subtitle {
+  .landing-infogerance-use-cases-subtitle {
     margin: 0;
-    color: var(--f1-support-secondary);
+    color: var(--landing-infogerance-use-cases-secondary);
     font-size: 17px;
   }
-  .f1-support-grid {
+  .landing-infogerance-use-cases-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
     align-items: start;
   }
-  .f1-support-card {
+  .landing-infogerance-use-cases-card {
     background: #ffffff;
-    border: 1px solid var(--f1-support-border);
+    border: 1px solid var(--landing-infogerance-use-cases-border);
     border-radius: 14px;
     box-shadow: 0 1px 2px rgba(11, 42, 74, 0.04), 0 6px 20px rgba(11, 42, 74, 0.05);
     padding: 22px 24px 24px;
   }
-  .f1-support-card--one {
-    --f1-support-case: var(--f1-support-case-one);
-    --f1-support-case-dark: var(--f1-support-case-one-dark);
+  .landing-infogerance-use-cases-card--one {
+    --landing-infogerance-use-cases-case: var(--landing-infogerance-use-cases-case-one);
+    --landing-infogerance-use-cases-case-dark: var(--landing-infogerance-use-cases-case-one-dark);
   }
-  .f1-support-card--two {
-    --f1-support-case: var(--f1-support-case-two);
-    --f1-support-case-dark: var(--f1-support-case-two-dark);
+  .landing-infogerance-use-cases-card--two {
+    --landing-infogerance-use-cases-case: var(--landing-infogerance-use-cases-case-two);
+    --landing-infogerance-use-cases-case-dark: var(--landing-infogerance-use-cases-case-two-dark);
   }
-  .f1-support-case-head {
+  .landing-infogerance-use-cases-case-head {
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 0 0 16px;
     padding-bottom: 14px;
-    border-bottom: 1px solid var(--f1-support-border);
+    border-bottom: 1px solid var(--landing-infogerance-use-cases-border);
   }
-  .f1-support-case-icon {
+  .landing-infogerance-use-cases-case-icon {
     flex: 0 0 auto;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--f1-support-case-dark) center / 20px 20px no-repeat;
+    background: var(--landing-infogerance-use-cases-case-dark) center / 20px 20px no-repeat;
   }
-  .f1-support-card--one .f1-support-case-icon {
+  .landing-infogerance-use-cases-card--one .landing-infogerance-use-cases-case-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z'/%3E%3C/svg%3E");
   }
-  .f1-support-card--two .f1-support-case-icon {
+  .landing-infogerance-use-cases-card--two .landing-infogerance-use-cases-case-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='16' x='2' y='4' rx='2'/%3E%3Cpath d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/%3E%3C/svg%3E");
   }
-  .f1-support-case-title {
+  .landing-infogerance-use-cases-case-title {
     margin: 0;
     padding: 0;
-    color: var(--f1-support-heading);
+    color: var(--landing-infogerance-use-cases-heading);
     font-size: 19px;
     font-weight: 600;
-    font-family: var(--f1-support-font-heading);
+    font-family: var(--landing-infogerance-use-cases-font-heading);
     line-height: 1.3;
   }
-  .f1-support-chat {
+  .landing-infogerance-use-cases-chat {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    max-height: 600px;
+    overflow: auto;
+    padding-right: 10px;
+    padding-left: 10px;
   }
-  .f1-support-chat > li {
+  .landing-infogerance-use-cases-chat > li {
     margin: 0;
     list-style: none;
   }
-  .f1-support-chat > li::marker {
+  .landing-infogerance-use-cases-chat > li::marker {
     content: none;
   }
-  .f1-support-msg {
+  .landing-infogerance-use-cases-msg {
     padding: 0;
     display: grid;
     grid-template-rows: auto auto;
@@ -134,45 +137,45 @@
     align-items: end;
     max-width: 82%;
   }
-  .f1-support-msg::before {
+  .landing-infogerance-use-cases-msg::before {
     content: "";
     grid-row: 2;
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--f1-support-case) center / 20px 20px no-repeat;
+    background: var(--landing-infogerance-use-cases-case) center / 20px 20px no-repeat;
   }
-  .f1-support-msg .f1-support-bubble {
+  .landing-infogerance-use-cases-msg .landing-infogerance-use-cases-bubble {
     grid-row: 2;
   }
-  .f1-support-msg--client {
+  .landing-infogerance-use-cases-msg--client {
     align-self: flex-start;
     grid-template-columns: 36px auto;
   }
-  .f1-support-msg--client::before {
+  .landing-infogerance-use-cases-msg--client::before {
     grid-column: 1;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231f2a30' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
   }
-  .f1-support-msg--client .f1-support-bubble,
-  .f1-support-msg--client .f1-support-label {
+  .landing-infogerance-use-cases-msg--client .landing-infogerance-use-cases-bubble,
+  .landing-infogerance-use-cases-msg--client .landing-infogerance-use-cases-label {
     grid-column: 2;
     justify-self: start;
   }
-  .f1-support-msg--support {
+  .landing-infogerance-use-cases-msg--support {
     align-self: flex-end;
     grid-template-columns: auto 36px;
   }
-  .f1-support-msg--support::before {
+  .landing-infogerance-use-cases-msg--support::before {
     grid-column: 2;
-    background-color: var(--f1-support-bubble-support-bg);
+    background-color: var(--landing-infogerance-use-cases-bubble-support-bg);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z'/%3E%3Cpath d='M21 16v2a4 4 0 0 1-4 4h-5'/%3E%3C/svg%3E");
   }
-  .f1-support-msg--support .f1-support-bubble,
-  .f1-support-msg--support .f1-support-label {
+  .landing-infogerance-use-cases-msg--support .landing-infogerance-use-cases-bubble,
+  .landing-infogerance-use-cases-msg--support .landing-infogerance-use-cases-label {
     grid-column: 1;
     justify-self: end;
   }
-  .f1-support-label {
+  .landing-infogerance-use-cases-label {
     position: relative;
     grid-row: 1;
     display: block;
@@ -184,15 +187,15 @@
     line-height: 1.5;
     letter-spacing: 0.06em;
   }
-  .f1-support-msg--client .f1-support-label {
-    background: var(--f1-support-case);
-    color: var(--f1-support-secondary);
+  .landing-infogerance-use-cases-msg--client .landing-infogerance-use-cases-label {
+    background: var(--landing-infogerance-use-cases-case);
+    color: var(--landing-infogerance-use-cases-secondary);
   }
-  .f1-support-msg--support .f1-support-label {
-    background: var(--f1-support-bubble-support-bg);
+  .landing-infogerance-use-cases-msg--support .landing-infogerance-use-cases-label {
+    background: var(--landing-infogerance-use-cases-bubble-support-bg);
     color: #ffffff;
   }
-  .f1-support-msg--resolved .f1-support-label::before {
+  .landing-infogerance-use-cases-msg--resolved .landing-infogerance-use-cases-label::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -203,85 +206,85 @@
     transform: translateY(-50%);
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236cb636' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / contain no-repeat;
   }
-  .f1-support-bubble {
+  .landing-infogerance-use-cases-bubble {
     margin: 0;
     padding: 9px 14px;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.5;
     border-radius: 12px;
     border: 1px solid transparent;
   }
-  .f1-support-msg--client .f1-support-bubble {
-    background: var(--f1-support-case);
-    border-color: var(--f1-support-case);
+  .landing-infogerance-use-cases-msg--client .landing-infogerance-use-cases-bubble {
+    background: var(--landing-infogerance-use-cases-case);
+    border-color: var(--landing-infogerance-use-cases-case);
     border-bottom-left-radius: 4px;
-    color: var(--f1-support-foreground);
+    color: var(--landing-infogerance-use-cases-foreground);
   }
-  .f1-support-msg--support .f1-support-bubble {
-    background: var(--f1-support-bubble-support-bg);
-    border-color: var(--f1-support-bubble-support-bg);
+  .landing-infogerance-use-cases-msg--support .landing-infogerance-use-cases-bubble {
+    background: var(--landing-infogerance-use-cases-bubble-support-bg);
+    border-color: var(--landing-infogerance-use-cases-bubble-support-bg);
     border-bottom-right-radius: 4px;
     color: #ffffff;
   }
-  .f1-support-delay {
+  .landing-infogerance-use-cases-delay {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 6px 0;
   }
-  .f1-support-delay::before,
-  .f1-support-delay::after {
+  .landing-infogerance-use-cases-delay::before,
+  .landing-infogerance-use-cases-delay::after {
     content: "";
     flex: 1 1 auto;
     height: 1px;
-    background: var(--f1-support-border);
+    background: var(--landing-infogerance-use-cases-border);
   }
-  .f1-support-delay-badge {
+  .landing-infogerance-use-cases-delay-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
     padding: 4px 12px;
     border-radius: 999px;
-    background: var(--f1-support-pending-50);
-    border: 1px solid var(--f1-support-pending-200);
-    color: var(--f1-support-pending-500);
+    background: var(--landing-infogerance-use-cases-pending-50);
+    border: 1px solid var(--landing-infogerance-use-cases-pending-200);
+    color: var(--landing-infogerance-use-cases-pending-500);
     font-size: 13px;
     font-weight: 700;
     white-space: nowrap;
   }
-  .f1-support-delay-badge::before {
+  .landing-infogerance-use-cases-delay-badge::before {
     content: "";
     flex: 0 0 auto;
     width: 14px;
     height: 14px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23eab308' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='8' cy='8' r='6.3'/%3E%3Cpath d='M8 4.6V8l2.3 1.5'/%3E%3C/svg%3E") center / contain no-repeat;
   }
-  .f1-support-actions {
+  .landing-infogerance-use-cases-actions {
     margin: 6px 0 !important;
     padding: 12px 16px;
-    background: var(--f1-support-pending-50);
-    border: 1px solid var(--f1-support-pending-200);
-    border-left: 3px solid var(--f1-support-pending-500);
+    background: var(--landing-infogerance-use-cases-pending-50);
+    border: 1px solid var(--landing-infogerance-use-cases-pending-200);
+    border-left: 3px solid var(--landing-infogerance-use-cases-pending-500);
     border-radius: 8px;
   }
-  .f1-support-actions-title {
+  .landing-infogerance-use-cases-actions-title {
     margin: 0 0 6px;
     padding: 0;
-    color: var(--f1-support-pending-500);
+    color: var(--landing-infogerance-use-cases-pending-500);
     font-size: 13px;
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
-  .f1-support-actions-list {
+  .landing-infogerance-use-cases-actions-list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
     gap: 4px;
   }
-  .f1-support-action {
+  .landing-infogerance-use-cases-action {
     position: relative;
     margin: 0;
     padding: 0 0 0 24px;
@@ -289,12 +292,12 @@
     font-size: 14.5px;
     font-weight: 600;
     line-height: 1.45;
-    color: var(--f1-support-secondary);
+    color: var(--landing-infogerance-use-cases-secondary);
   }
-  .f1-support-action::marker {
+  .landing-infogerance-use-cases-action::marker {
     content: none;
   }
-  .f1-support-action::before {
+  .landing-infogerance-use-cases-action::before {
     content: "";
     position: absolute;
     left: 0;
@@ -302,141 +305,137 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: var(--f1-support-pending-500) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-4.9'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
+    background: var(--landing-infogerance-use-cases-pending-500) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 8.2l2.3 2.3 4.7-4.9'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
   }
   @media (max-width: 1024px) {
-    .f1-support-grid {
+    .landing-infogerance-use-cases-grid {
       gap: 18px;
     }
-    .f1-support-card {
+    .landing-infogerance-use-cases-card {
       padding: 18px 18px 20px;
     }
-    .f1-support-msg {
+    .landing-infogerance-use-cases-msg {
       max-width: 88%;
     }
   }
   @media (max-width: 860px) {
-    .f1-support-section {
+    .landing-infogerance-use-cases-section {
       padding: 36px 16px;
     }
-    .f1-support-grid {
+    .landing-infogerance-use-cases-grid {
       grid-template-columns: minmax(0, 1fr);
     }
   }
   @media (max-width: 480px) {
-    .f1-support-subtitle {
+    .landing-infogerance-use-cases-subtitle {
       font-size: 16px;
     }
-    .f1-support-case-title {
+    .landing-infogerance-use-cases-case-title {
       font-size: 17px;
     }
-    .f1-support-msg {
+    .landing-infogerance-use-cases-msg {
       max-width: 92%;
     }
-    .f1-support-bubble {
+    .landing-infogerance-use-cases-bubble {
       font-size: 14.5px;
     }
   }
 </style>
-<section class="f1-support-section" aria-labelledby="f1-support-title">
-  <div class="f1-support-inner">
-    <header class="f1-support-header">
-      <h2 id="f1-support-title" class="f1-support-title">Concrètement, comment ça se passe quand vous avez besoin de nous ?</h2>
-      <p class="f1-support-subtitle">Deux exemples réels de demandes traitées par notre équipe support.</p>
-    </header>
-    <div class="f1-support-grid">
-      <article class="f1-support-card f1-support-card--one" aria-labelledby="f1-support-case1-title">
-        <div class="f1-support-case-head">
-          <span class="f1-support-case-icon" aria-hidden="true"></span>
-          <h3 id="f1-support-case1-title" class="f1-support-case-title">Un dossier important a disparu</h3>
+<div class="landing-infogerance-use-cases-section" aria-labelledby="landing-infogerance-use-cases-title">
+  <div class="landing-infogerance-use-cases-inner">
+    <div class="landing-infogerance-use-cases-grid">
+      <article class="landing-infogerance-use-cases-card landing-infogerance-use-cases-card--one" aria-labelledby="landing-infogerance-use-cases-case1-title">
+        <div class="landing-infogerance-use-cases-case-head">
+          <span class="landing-infogerance-use-cases-case-icon" aria-hidden="true"></span>
+          <h3 id="landing-infogerance-use-cases-case1-title" class="landing-infogerance-use-cases-case-title">Un dossier important a disparu</h3>
         </div>
-        <ol class="f1-support-chat">
-          <li class="f1-support-msg f1-support-msg--client">
-            <span class="f1-support-label">Client</span>
-            <p class="f1-support-bubble">Bonjour, je ne retrouve plus un dossier important.</p>
+        <ol class="landing-infogerance-use-cases-chat">
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--client">
+            <span class="landing-infogerance-use-cases-label">Client</span>
+            <p class="landing-infogerance-use-cases-bubble">Bonjour, je ne retrouve plus un dossier important.</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
-            <span class="f1-support-label">F1 Support</span>
-            <p class="f1-support-bubble">D&apos;accord, pouvez-vous me donner le nom du dossier ?</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support">
+            <span class="landing-infogerance-use-cases-label">F1 Support</span>
+            <p class="landing-infogerance-use-cases-bubble">D&apos;accord, pouvez-vous me donner le nom du dossier ?</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--client">
-            <p class="f1-support-bubble">Oui, il s&apos;appelle &quot;Dossiers clients 2026&quot;</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--client">
+            <p class="landing-infogerance-use-cases-bubble">Oui, il s&apos;appelle &quot;Dossiers clients 2026&quot;</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
-            <p class="f1-support-bubble">Vous savez où il était enregistré à l&apos;origine ? Et depuis quand avez-vous remarqué sa disparition ?</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support">
+            <p class="landing-infogerance-use-cases-bubble">Vous savez où il était enregistré à l&apos;origine ? Et depuis quand avez-vous remarqué sa disparition ?</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--client">
-            <p class="f1-support-bubble">Il était sur le serveur partagé, et je m&apos;en suis aperçu ce matin.</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--client">
+            <p class="landing-infogerance-use-cases-bubble">Il était sur le serveur partagé, et je m&apos;en suis aperçu ce matin.</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
-            <p class="f1-support-bubble">Très bien, on vérifie les sauvegardes et on revient vers vous rapidement.</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support">
+            <p class="landing-infogerance-use-cases-bubble">Très bien, on vérifie les sauvegardes et on revient vers vous rapidement.</p>
           </li>
-          <li class="f1-support-actions">
-            <h4 class="f1-support-actions-title">Actions menées</h4>
-            <ul class="f1-support-actions-list">
-              <li class="f1-support-action">Vérification de l&apos;emplacement initial sur le serveur</li>
-              <li class="f1-support-action">Contrôle de l&apos;état des sauvegardes</li>
-              <li class="f1-support-action">Recherche de la dernière version sauvegardée et restauration du dossier</li>
+          <li class="landing-infogerance-use-cases-actions">
+            <h4 class="landing-infogerance-use-cases-actions-title">Actions menées</h4>
+            <ul class="landing-infogerance-use-cases-actions-list">
+              <li class="landing-infogerance-use-cases-action">Vérification de l&apos;emplacement initial sur le serveur</li>
+              <li class="landing-infogerance-use-cases-action">Contrôle de l&apos;état des sauvegardes</li>
+              <li class="landing-infogerance-use-cases-action">Recherche de la dernière version sauvegardée et restauration du dossier</li>
             </ul>
           </li>
-          <li class="f1-support-delay">
-            <span class="f1-support-delay-badge">20 minutes plus tard</span>
+          <li class="landing-infogerance-use-cases-delay">
+            <span class="landing-infogerance-use-cases-delay-badge">20 minutes plus tard</span>
           </li>
-          <li class="f1-support-msg f1-support-msg--support f1-support-msg--resolved">
-            <span class="f1-support-label">F1 Support</span>
-            <p class="f1-support-bubble">C&apos;est réglé. Le dossier a été restauré. Pouvez-vous vérifier que vous y accédez correctement ?</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support landing-infogerance-use-cases-msg--resolved">
+            <span class="landing-infogerance-use-cases-label">F1 Support</span>
+            <p class="landing-infogerance-use-cases-bubble">C&apos;est réglé. Le dossier a été restauré. Pouvez-vous vérifier que vous y accédez correctement ?</p>
           </li>
         </ol>
       </article>
-      <article class="f1-support-card f1-support-card--two" aria-labelledby="f1-support-case2-title">
-        <div class="f1-support-case-head">
-          <span class="f1-support-case-icon" aria-hidden="true"></span>
-          <h3 id="f1-support-case2-title" class="f1-support-case-title">Un collaborateur reçoit un mail suspect</h3>
+      <article class="landing-infogerance-use-cases-card landing-infogerance-use-cases-card--two" aria-labelledby="landing-infogerance-use-cases-case2-title">
+        <div class="landing-infogerance-use-cases-case-head">
+          <span class="landing-infogerance-use-cases-case-icon" aria-hidden="true"></span>
+          <h3 id="landing-infogerance-use-cases-case2-title" class="landing-infogerance-use-cases-case-title">Un collaborateur reçoit un mail suspect</h3>
         </div>
-        <ol class="f1-support-chat">
-          <li class="f1-support-msg f1-support-msg--client">
-            <span class="f1-support-label">Client</span>
-            <p class="f1-support-bubble">Bonjour, j&apos;ai reçu un mail avec un lien qui me paraît suspect. Je l&apos;ai ouvert et la page me demande des informations personnelles.</p>
+        <ol class="landing-infogerance-use-cases-chat">
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--client">
+            <span class="landing-infogerance-use-cases-label">Client</span>
+            <p class="landing-infogerance-use-cases-bubble">Bonjour, j&apos;ai reçu un mail avec un lien qui me paraît suspect. Je l&apos;ai ouvert et la page me demande des informations personnelles.</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
-            <span class="f1-support-label">F1 Support</span>
-            <p class="f1-support-bubble">Vous avez renseigné des informations sur la page ?</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support">
+            <span class="landing-infogerance-use-cases-label">F1 Support</span>
+            <p class="landing-infogerance-use-cases-bubble">Vous avez renseigné des informations sur la page ?</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--client">
-            <p class="f1-support-bubble">Non, j&apos;ai eu un doute et je vous ai appelés.</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--client">
+            <p class="landing-infogerance-use-cases-bubble">Non, j&apos;ai eu un doute et je vous ai appelés.</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
-            <p class="f1-support-bubble">Vous avez bien fait. Ne cliquez plus sur le message, on va l&apos;analyser et vérifier immédiatement s&apos;il est malveillant.</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support">
+            <p class="landing-infogerance-use-cases-bubble">Vous avez bien fait. Ne cliquez plus sur le message, on va l&apos;analyser et vérifier immédiatement s&apos;il est malveillant.</p>
           </li>
-          <li class="f1-support-delay">
-            <span class="f1-support-delay-badge">Quelques instants plus tard</span>
+          <li class="landing-infogerance-use-cases-delay">
+            <span class="landing-infogerance-use-cases-delay-badge">Quelques instants plus tard</span>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
-            <p class="f1-support-bubble">Le lien est bien malveillant. Avec votre accord, on peut sécuriser votre messagerie pour éviter que ce type de message arrive dans les boîtes mail.</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support">
+            <p class="landing-infogerance-use-cases-bubble">Le lien est bien malveillant. Avec votre accord, on peut sécuriser votre messagerie pour éviter que ce type de message arrive dans les boîtes mail.</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--client">
-            <p class="f1-support-bubble">C&apos;est d&apos;accord, allez-y.</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--client">
+            <p class="landing-infogerance-use-cases-bubble">C&apos;est d&apos;accord, allez-y.</p>
           </li>
-          <li class="f1-support-actions">
-            <h4 class="f1-support-actions-title">Actions menées</h4>
-            <ul class="f1-support-actions-list">
-              <li class="f1-support-action">Mise en place de Microsoft Defender pour la messagerie</li>
-              <li class="f1-support-action">Configuration des stratégies d&apos;alerte et de détection des menaces</li>
-              <li class="f1-support-action">Activation d&apos;une quarantaine pour les messages suspects</li>
+          <li class="landing-infogerance-use-cases-actions">
+            <h4 class="landing-infogerance-use-cases-actions-title">Actions menées</h4>
+            <ul class="landing-infogerance-use-cases-actions-list">
+              <li class="landing-infogerance-use-cases-action">Mise en place de Microsoft Defender pour la messagerie</li>
+              <li class="landing-infogerance-use-cases-action">Configuration des stratégies d&apos;alerte et de détection des menaces</li>
+              <li class="landing-infogerance-use-cases-action">Activation d&apos;une quarantaine pour les messages suspects</li>
             </ul>
           </li>
-          <li class="f1-support-delay">
-            <span class="f1-support-delay-badge">1 heure plus tard</span>
+          <li class="landing-infogerance-use-cases-delay">
+            <span class="landing-infogerance-use-cases-delay-badge">1 heure plus tard</span>
           </li>
-          <li class="f1-support-msg f1-support-msg--support f1-support-msg--resolved">
-            <span class="f1-support-label">F1 Support</span>
-            <p class="f1-support-bubble">La protection est en place. Les futurs messages identifiés comme suspects seront automatiquement placés en quarantaine.</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support landing-infogerance-use-cases-msg--resolved">
+            <span class="landing-infogerance-use-cases-label">F1 Support</span>
+            <p class="landing-infogerance-use-cases-bubble">La protection est en place. Les futurs messages identifiés comme suspects seront automatiquement placés en quarantaine.</p>
           </li>
-          <li class="f1-support-msg f1-support-msg--support">
-            <p class="f1-support-bubble">Maintenant je vais vous montrer comment consulter et gérer les messages en quarantaine. Un guide restera également à votre disposition si nécessaire.</p>
+          <li class="landing-infogerance-use-cases-msg landing-infogerance-use-cases-msg--support">
+            <p class="landing-infogerance-use-cases-bubble">Maintenant je vais vous montrer comment consulter et gérer les messages en quarantaine. Un guide restera également à votre disposition si nécessaire.</p>
           </li>
         </ol>
       </article>
     </div>
   </div>
-</section>
+</div>
